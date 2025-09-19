@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AI Assistant</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout sidebar-hidden">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn">
+                    <i class="ph-bold ph-plus"></i>
+                    <span>New Chat</span>
+                </button>
+                <button id="toggle-sidebar-btn" class="sidebar-toggle">
+                    <i class="ph-bold ph-caret-double-left"></i>
+                </button>
+            </div>
+            <div class="sidebar-history">
+                <div class="history-header">
+                    <p>Recent</p>
+                    <i class="ph ph-caret-down" id="toggle-history"></i>
+                </div>
+                <ul id="history-list" class="history-list">
+                    <li class="active"><a href="#"><i class="ph ph-chat-text"></i>What is quantum computing?</a></li>
+                    <li><a href="#"><i class="ph ph-chat-text"></i>Recipe for chocolate cake</a></li>
+                    <li><a href="#"><i class="ph ph-chat-text"></i>Plan a trip to Japan</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="profile-avatar">U</div>
+                    <span>user@email.com</span>
+                </div>
+                <a href="login.html" class="logout-link">
+                    <i class="ph-bold ph-sign-out"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
+        
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <main class="chat-container">
+            <div class="chat-header">
+                 <button id="main-toggle-sidebar-btn" class="sidebar-toggle main-sidebar-toggle">
+                    <i class="ph-bold ph-list"></i>
+                </button>
+            </div>
+            
+            <div class="chat-box" id="chat-box">
+                <div class="message ai-message">
+                    <div class="profile-avatar ai-avatar"><i class="ph-bold ph-robot"></i></div>
+                    <div class="message-content"><p>Hello! How can I assist you today?</p></div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" id="user-input" placeholder="Message your AI Assistant...">
+                    <button id="send-btn" aria-label="Send message">
+                        <i class="ph-bold ph-arrow-up"></i>
+                    </button>
+                </div>
+                <p class="disclaimer">This is a demo UI. AI may produce inaccurate information.</p>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
