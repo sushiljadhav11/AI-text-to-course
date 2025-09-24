@@ -6,17 +6,15 @@ import {
   getCourseById, 
   getLessonById 
 } from "../controllers/courseController.js";
-import { authMiddleware } from "../middlewares/auth.js";
+// import { authMiddleware } from "../middlewares/auth.js"; // no longer needed
 
 const router = express.Router();
 
+router.post("/generate-course", generateCourseController);
+router.post("/generate-lesson", generateLessonController);
 
-router.post("/generate-course", authMiddleware, generateCourseController);
-router.post("/generate-lesson", authMiddleware, generateLessonController);
-
-
-router.get("/user-courses", authMiddleware, getUserCourses);
-router.get("/course/:courseId", authMiddleware, getCourseById);
-router.get("/lesson/:lessonId", authMiddleware, getLessonById);
+router.get("/user-courses", getUserCourses);
+router.get("/course/:courseId", getCourseById);
+router.get("/lesson/:lessonId", getLessonById);
 
 export default router;
